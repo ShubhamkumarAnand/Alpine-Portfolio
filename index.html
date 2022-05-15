@@ -24,11 +24,11 @@
           name : 'Shubham Kumar Anand',
           search: '',
           posts: [
-            {title: Post 1},
-            {title: Post 2},
-            {title: Post 3},
-            {title: Post 4},
-            {title: Post 5}
+            {title: 'Post 1'},
+            {title: 'Post 2'},
+            {title: 'Post 3'},
+            {title: 'Post 4'},
+            {title: 'Post 5'}
           ]
         }"
 			>
@@ -79,7 +79,7 @@
 				<!-- x-for -->
 				<h1 class="font-bold mt-6">Posts</h1>
 				<template x-for="post in posts">
-					<div x-text="post.title"></div>
+					<div x-text="post.title" class="p-2"></div>
 				</template>
 			</div>
 		</div>
