@@ -16,12 +16,20 @@
 	<body>
 		<div class="container mx-auto mt-6 max-w-sm">
 			<h1 class="text-5xl mb-4">Alpine JS Demo</h1>
-			<!-- x-data alpinejs Components -->
-			<div x-data="{open: false, name : 'Shubham Kumar Anand'}">
-				<button x-on:click="open = !open" class="bg-slate-700 px-4 py-2 text-white rounded-xl">
+
+			<!-- x-data alpine Components -->
+			<div x-data="{open: false, name : 'Shubham Kumar Anand', search: ''}">
+				<!-- x-on & x-bind-->
+				<button
+					x-on:click="open = !open"
+					:class="open ? 'bg-blue-700' : 'bg-slate-700' "
+					class="px-4 py-2 text-white rounded-xl"
+				>
 					toggle
 				</button>
-				<div x-show="open">
+
+				<!-- x-show -->
+				<div x-show="open" x-transition x-cloak>
 					<p class="bg-gray-200 my-6 p-4 rounded">
 						यह शौर्यमयी परिदृश्यों की एक भौगोलिक संरचना है,<br />
 						क्षण सम्मोहन, कर्ण पराक्रम युद्ध क्षेत्र की रचना है<br />
@@ -31,7 +39,20 @@
 						महाराज यह कर्ण नही, यह रौद्र रूप है शंकर का.
 					</p>
 				</div>
+
+				<!-- x-text -->
 				<div class="my-4">My name is <span x-text="name" class="font-bold"></span></div>
+
+				<!-- x-effect -->
+				<div x-effect="console.log(open)"></div>
+
+				<!-- x-model -->
+				<input
+					x-model="search"
+					type="text"
+					class="border p-2 w-full mb-2 mt-6"
+					placeholder="Search for something"
+				/>
 			</div>
 		</div>
 	</body>
