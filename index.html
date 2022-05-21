@@ -7,6 +7,12 @@
 		<title>Alpine</title>
 		<script src="//unpkg.com/alpinejs" defer></script>
 		<script src="https://cdn.tailwindcss.com"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+			integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
 		<style>
 			[x-cloak] {
 				display: none;
@@ -81,6 +87,26 @@
 				<template x-for="post in posts">
 					<div x-text="post.title" class="p-2"></div>
 				</template>
+				<button
+					@click="posts.push({title:'new Post'})"
+					class="bg-blue-800 text-white px-2 py-2 rounded-lg mt-4"
+				>
+					Add Post
+				</button>
+
+				<!-- x-ref -->
+				<div class="my-6">
+					<div x-ref="text"></div>
+					<button
+						@click="$refs.text.innerText = 'Hi, This is Shubham'"
+						class="bg-black text-white p-2 rounded-lg"
+					>
+						Add text
+					</button>
+					<button @click="$refs.text.remove()" class="bg-black text-white p-2 rounded-lg">
+						Remove text
+					</button>
+				</div>
 			</div>
 		</div>
 	</body>
