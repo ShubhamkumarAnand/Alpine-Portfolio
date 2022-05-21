@@ -107,7 +107,42 @@
 						Remove text
 					</button>
 				</div>
+
+				<!-- x-html -->
+				<div x-html="(await axios.get('./partials.html')).data">...</div>
+
+				<!-- $el -->
+				<button x-on:click="$el.innerHTML='Hello Devs!'" class="mt-4 p-4 border">
+					Replace Text
+				</button>
+
+				<!-- x-init & watch-->
+				<div x-init="$watch('posts', value => console.log(value))"></div>
+
+				<!-- $dispatch -->
+				<div @notify="alert('You have been Notified')">
+					<button @click="$dispatch('notify')" class="bg-green-800 mt-4 p-2 text-white rounded-lg">
+						Notify
+					</button>
+				</div>
+
+				<!-- $data -->
+				<button
+					@click="getLatestPost($data.posts)"
+					class="bg-orange-800 text-white mt-6 p-2 rounded-lg"
+				>
+					Get Latest Posts
+				</button>
 			</div>
 		</div>
+
+		<footer class="text-center mt-3">
+			<p>Copyright &copy; <span x-text="new Date().getFullYear()"></span></p>
+		</footer>
+		<script>
+			function getLatestPost(posts) {
+				console.log(posts.slice(-1).pop())
+			}
+		</script>
 	</body>
 </html>
