@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Alpine</title>
+		<script defer src="https://unpkg.com/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
 		<script src="//unpkg.com/alpinejs" defer></script>
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script
@@ -133,10 +134,13 @@
 				>
 					Get Latest Posts
 				</button>
+				<br />
+				<div class="mt-6"><h1 class="mt-2 text-2xl">Enter the Date :</h1></div>
+				<input class="my-2 border bg-grey-200 p-2" x-mask="99/99/9999" placeholder="MM/DD/YYYY" />
 			</div>
 		</div>
 
-		<footer class="text-center mt-3">
+		<footer x-data class="text-center mt-3">
 			<p>Copyright &copy; <span x-text="new Date().getFullYear()"></span></p>
 		</footer>
 		<script>
