@@ -6,4 +6,4 @@ The Javascript framework which converts the HTML into a programming Language...K
 
 All the 15 Properties and Magic function are implemented.
 
-Next Plan is to implement this beautiful library in the Portfolio website.
+Next Plan is to implement this beautiful library in the Portfolio website which uses the Alpine in place of JQuery.
